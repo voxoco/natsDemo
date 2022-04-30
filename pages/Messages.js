@@ -2,8 +2,8 @@ import Message from './Message';
 const Messages = ({ messages }) => {
   return (
     <>
-      {messages.map((m) => (
-        <Message key={m.key} msg={m} />
+      {messages.map((m, index) => (
+        <Message key={index} msg={m} />
       ))}
     </>
   )
