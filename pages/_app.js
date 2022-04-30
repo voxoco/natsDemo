@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {connect, StringCodec} from '../node_modules/nats.ws/lib/src/mod.js'
-import {Messages} from './Messages';
+import Messages from './Messages';
 import '../styles/globals.css'
 const sc = StringCodec();
 
