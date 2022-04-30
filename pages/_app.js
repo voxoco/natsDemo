@@ -27,6 +27,7 @@ function App() {
   }
 
   //send a message if there is content
+  //empty the input value
   const sendMessage = async (err, msg) => {
     if(currentMessage){
       nc.publish('chatChannel', jc.encode({text: currentMessage, user: 'Joe'}));
@@ -34,7 +35,7 @@ function App() {
     }
   }
 
-  //use effect hook to instantiate the nats connection
+  //use effect hook to instantiate the nats connection if not already
   useEffect(() => {
     if (nc === undefined) {
       connect({servers: ['wss://natsdemo.voxo.co:443'], waitOnFirstConnect: true})
